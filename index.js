@@ -317,9 +317,11 @@ const available = await probePlugin();
 
 if (!available) {
     toastr.warning(
-        'Image Compressor server plugin is not available.',
+        'Image Compressor server plugin is not available. If you just cloned it into '
+        + 'SillyTavern/plugins, run <b>npm install --omit=dev</b> in the plugin folder and '
+        + 'restart SillyTavern. (No build step is needed — the plugin ships pre-built.)',
         'Image Compressor',
-        { timeOut: 0, closeButton: true },
+        { timeOut: 0, closeButton: true, escapeHtml: false },
     );
 } else {
     const users = await fetchUsers();
